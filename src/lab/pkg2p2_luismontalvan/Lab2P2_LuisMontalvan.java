@@ -158,8 +158,98 @@ public class Lab2P2_LuisMontalvan {
                             break;
                         case 2:
                             pochita = new Scanner(System.in);
-                            
+                            System.out.print("Ingrese el escultor: ");
+                            String escultor = pochita.nextLine();
+                            System.out.print("Ingrese el material de la esculura: ");
+                            String material = pochita.nextLine();
+                            System.out.print("Ingrese el departamento a el que pertenece"
+                                    + "\n1.Arqueologia"
+                                    + "\n2.Artes"
+                                    + "\n3.Moderna"
+                                    + "\nElija una opcion: ");
+                            pochita = new Scanner(System.in);
+                            int dep = pochita.nextInt();
+                            String departamento = "";
+                            switch (dep) {
+                                case 1:
+                                    departamento = "Arqueologia";
+                                    break;
+                                case 2:
+                                    departamento = "Artes";
+                                    break;
+                                case 3:
+                                    departamento = "Moderna";
+                                    break;
+                                default:
+                                    throw new AssertionError();
+                            }
+                            System.out.print("Ingrese el ano en el que se empezo a esculpir");
+                            pochita = new Scanner(System.in);
+                            int ano = pochita.nextInt();
+                            esculturas.add(new Escultura(escultor, material, departamento, ano));
                             break;
+                        case 3:
+                            pochita = new Scanner(System.in);
+                            System.out.print("Ingrese las dimensiones: "
+                                    + "\n1.512 x 512"
+                                    + "\n2.420 x 360"
+                                    + "\n3.720 x 560"
+                                    + "\nElija una opcion: ");
+                            int opc = pochita.nextInt();
+                            String dimension = "";
+                            switch (opc) {
+                                case 1:
+                                    dimension = "512 x 512";
+                                    break;
+                                case 3:
+                                    dimension = "720 x 560";
+                                    break;
+                                case 2:
+                                    dimension = "420 x 360";
+                                    break; 
+                                default:
+                                    throw new AssertionError();
+                            }
+                            pochita = new Scanner(System.in);
+                            System.out.print("Ingrese la resolucion: "
+                                    + "\n1.1920 x 1080"
+                                    + "\n2.2048 x 1440"
+                                    + "\n3.3840 x 2160"
+                                    + "\nElija una opcion: ");
+                            opc = pochita.nextInt();
+                            String resolucion = "";
+                            switch (opc) {
+                                case 1:
+                                    resolucion = "1920 x 1080";
+                                    break;
+                                case 3:
+                                    resolucion = "2048 x 1440";
+                                    break;
+                                case 2:
+                                    resolucion = "3840 x 2160";
+                                    break; 
+                                default:
+                                    throw new AssertionError();
+                            }
+                            System.out.print("1.Color"
+                                    + "\n2.B/N"
+                                    + "\nElija el color de la fotografia: ");
+                            opc = pochita.nextInt();
+                            String Color = opc==1? "Color":"B/N";
+                            fotografias.add(new Fotografia(dimension, resolucion, Color));
+                            break;
+                        case 4:
+                            pochita = new Scanner(System.in);
+                            System.out.print("Ingrese el numero de palaras del escrito: ");
+                            int palabras = pochita.nextInt();
+                            System.out.print("Ingrese la epoca del escrito: ");
+                            pochita = new Scanner(System.in);
+                            String epoca = pochita.nextLine();
+                            System.out.print("Ingrese el genero: ");
+                            String genero = pochita.nextLine();
+                            System.out.print("Ingrese el autor: ");
+                            String autorE = pochita.nextLine();
+                            escritos.add(new Escrito(palabras, epoca, genero, autorE));
                         default:
                             throw new AssertionError();
                     }
