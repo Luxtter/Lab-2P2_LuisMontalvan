@@ -80,6 +80,10 @@ public class Lab2P2_LuisMontalvan {
 
     static void menu(Login usuarioA) {
         Scanner pochita = new Scanner(System.in);
+        ArrayList<Pintura> pinturas = new ArrayList();
+        ArrayList<Escultura> esculturas = new ArrayList();
+        ArrayList<Fotografia> fotografias = new ArrayList();
+        ArrayList<Escrito> escritos = new ArrayList();
         int resp = 0;
         while (resp != 5) {
             if (usuarioA.getTipo().equals("Personal Administrativo")) {
