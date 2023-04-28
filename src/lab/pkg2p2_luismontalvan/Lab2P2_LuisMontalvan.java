@@ -27,19 +27,19 @@ public class Lab2P2_LuisMontalvan {
                     + "\n3. Salir"
                     + "\nElija un a opcion: ");
             resp = pochita.nextInt();
-            String usuario= "";
-            String contrasena= "";
+            String usuario = "";
+            String contrasena = "";
             switch (resp) {
                 case 1:
                     int bandera = 0;
                     System.out.print("Usuario: ");
-                    usuario= pochita.nextLine();
+                    usuario = pochita.nextLine();
                     System.out.print("Contrasena: ");
                     contrasena = pochita.nextLine();
                     for (int i = 0; i < usuarios.size(); i++) {
-                        if (usuario.equals(((Login)usuarios.get(i)).getUsuario())) {
-                            if (contrasena.endsWith(((Login)usuarios.get(i)).getContrasena())) {
-                               menu(); 
+                        if (usuario.equals(((Login) usuarios.get(i)).getUsuario())) {
+                            if (contrasena.endsWith(((Login) usuarios.get(i)).getContrasena())) {
+                                menu(((Login) usuarios.get(i)));
                             }
                         }
                         bandera++;
@@ -49,15 +49,15 @@ public class Lab2P2_LuisMontalvan {
                     }
                     break;
                 case 2:
-                    pochita= new Scanner(System.in);
+                    pochita = new Scanner(System.in);
                     System.out.print("Ingrese usuario: ");
-                    usuario= pochita.nextLine();
+                    usuario = pochita.nextLine();
                     System.out.print("Ingrese contrasena: ");
-                    contrasena= pochita.nextLine();
+                    contrasena = pochita.nextLine();
                     System.out.print("1. Cliente "
                             + "\n2. Personal Administrativo"
                             + "\n Elija el tipo de usuario que desea crear: ");
-                    pochita= new Scanner(System.in);
+                    pochita = new Scanner(System.in);
                     resp = pochita.nextInt();
                     String tipo = "";
                     switch (resp) {
@@ -78,7 +78,30 @@ public class Lab2P2_LuisMontalvan {
         }//fin del while
     }//fin del main
 
-    static void menu() {
-
+    static void menu(Login usuarioA) {
+        Scanner pochita = new Scanner(System.in);
+        int resp = 0;
+        while (resp != 5) {
+            if (usuarioA.getTipo().equals("Personal Administrativo")) {
+                System.out.print("1.Listar exhibiciones"
+                    + "\n2.Crear exhibicion"
+                        + "\n3.Modificar exhibiciones"
+                        + "\n4.Eliminar exhibiciones"
+                        + "\n5.Salir");
+                resp = pochita.nextInt();
+            } else {
+                System.out.print("1.Ver exhibiciones"
+                        + "\n2.Salir");
+                resp = pochita.nextInt();
+                resp = resp==2? 5:resp;
+            }
+            switch (resp) {
+                case 1:
+                    
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+        }
     }
 }
