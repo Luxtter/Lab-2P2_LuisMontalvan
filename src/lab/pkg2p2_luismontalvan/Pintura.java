@@ -67,7 +67,7 @@ class Pintura {
 
     @Override
     public String toString() {
-        return "Pintura{" + "nombre=" + nombre + ", autor=" + autor + ", exposicion=" + exposicion + ", presentacion=" + presentacion + ", adquisicion=" + adquisicion + '}';
+        return "Obra: " + nombre + "\nArtista: " + autor + "\nFecha de exhibicion: " + presentacion + "\nFecha de adquisicion: " + adquisicion + "\nEn exhibicion: " + exposicion;
     }
    
 }

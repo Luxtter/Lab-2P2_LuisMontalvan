@@ -46,7 +46,7 @@ class Fotografia {
 
     @Override
     public String toString() {
-        return "Fotografia{" + "dimension=" + dimension + ", resolucion=" + resolucion + ", color=" + color + '}';
+        return "Dimension: " + dimension + "\nResolucion=" + resolucion + "\nColor: " + color;
     }
     
 }

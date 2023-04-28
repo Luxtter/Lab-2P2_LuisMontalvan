@@ -56,7 +56,7 @@ class Escultura {
 
     @Override
     public String toString() {
-        return "Escultura{" + "escultor=" + escultor + ", material=" + material + ", departamento=" + departamento + ", ano=" + ano + '}';
+        return "Escultor: " + escultor + "\nMaterial: " + material + "\nDepartamento: " + departamento + "\nAno de empiezo: " + ano;
     }
     
 }

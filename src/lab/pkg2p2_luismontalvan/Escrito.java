@@ -56,7 +56,7 @@ class Escrito {
 
     @Override
     public String toString() {
-        return "Escrito{" + "palabras=" + palabras + ", epoca=" + epoca + ", genero=" + genero + ", autor=" + autor + '}';
+        return "Numero de Palabras: " + palabras + "\nEpoca: " + epoca + "\nGenero literario: " + genero + "\nAutor=" + autor;
     }
     
 }
