@@ -254,7 +254,92 @@ public class Lab2P2_LuisMontalvan {
                             throw new AssertionError();
                     }
                     break;
+                case 3:
+                    System.out.print("Que exhibicion desea modificar"
+                            + "\n1.Pintura"
+                            + "\n2.Escultura"
+                            + "\n3.Fotografia"
+                            + "\n4.Escrito"
+                            + "\nIngrese una opcion: ");
+                    pochita = new Scanner(System.in);
+                    resp = pochita.nextInt();
+                    switch (resp) {
+                        case 1:
+                            System.out.print("Que desea modificar"
+                            + "\n1.Nombre"
+                            + "\n2.Autor"
+                            + "\n3.Exposicion"
+                            + "\n4.Ano de presentacion"
+                            + "\n5.Ano de aquisicion"
+                                    + "\nElija una opcion: ");
+                            resp = pochita.nextInt();
+                            switch (resp) {
+                                case 1:
+                                    System.out.print("Ingrese el nombre: ");
+                                    break;
+                                default:
+                                    throw new AssertionError();
+                            }//1
+                    pochita = new Scanner(System.in);
+                    resp = pochita.nextInt();
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }//2
+                case 4:
+                    System.out.print("De que exhibicion desea eliminar"
+                            + "\n1.Pintura"
+                            + "\n2.Escultura"
+                            + "\n3.Fotografia"
+                            + "\n4.Escrito"
+                            + "\nIngrese una opcion: ");
+                    pochita = new Scanner(System.in);
+                    resp = pochita.nextInt();
+                    String cadena= "";
+                    int elim = 0;
+                    switch (resp) {
+                        case 1:
+                            cadena= "";
+                            for (int i = 0; i < pinturas.size(); i++) {
+                                cadena+= i+".Exhibicion "+i+1+"\n";
+                            }
+                            System.out.print(cadena+"Que exhibicion desea eliminar: ");
+                            elim = pochita.nextInt();
+                            pinturas.remove(elim);
+                            break;
+                        case 2:
+                            cadena = "";
+                            for (int i = 0; i < esculturas.size(); i++) {
+                                cadena+= i+".Exhibicion "+(i+1)+"\n";
+                            }
+                            System.out.print(cadena+"Que exhibicion desea eliminar: ");
+                            elim = pochita.nextInt();
+                            pinturas.remove(elim);
+                            break;
+                        case 3:
+                            cadena = "";
+                            for (int i = 0; i < fotografias.size(); i++) {
+                                cadena+= i+".Exhibicion "+(i+1)+"\n";
+                            }
+                            System.out.print(cadena+"Que exhibicion desea eliminar: ");
+                            elim = pochita.nextInt();
+                            pinturas.remove(elim);
+                            break;
+                        case 4:
+                            cadena = "";
+                            for (int i = 0; i < pinturas.size(); i++) {
+                                cadena+= i+".Exhibicion "+(i+1)+"\n";
+                            }
+                            System.out.print(cadena+"Que exhibicion desea eliminar: ");
+                            elim = pochita.nextInt();
+                            pinturas.remove(elim);
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
+                    break;
                 default:
+                  
                     throw new AssertionError();
             }
         }
