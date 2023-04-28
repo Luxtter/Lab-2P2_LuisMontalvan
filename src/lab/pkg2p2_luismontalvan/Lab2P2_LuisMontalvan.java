@@ -19,7 +19,7 @@ public class Lab2P2_LuisMontalvan {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Scanner pochita = new Scanner(System.in);
         int resp = 0;
         ArrayList<Login> usuarios = new ArrayList();
@@ -263,8 +263,16 @@ public class Lab2P2_LuisMontalvan {
                             + "\nIngrese una opcion: ");
                     pochita = new Scanner(System.in);
                     resp = pochita.nextInt();
+                    System.out.println("Que exhibicion desea modificar");
+                    
                     switch (resp) {
                         case 1:
+                            String ecad = "";
+                            for (int i = 0; i < pinturas.size(); i++) {
+                                ecad+= i+".Exhibicion "+(i+1)+"\n";
+                            }
+                            System.out.print(ecad+"Elija una opcion: ");
+                            int opc = pochita.nextInt();
                             System.out.print("Que desea modificar"
                             + "\n1.Nombre"
                             + "\n2.Autor"
@@ -273,16 +281,42 @@ public class Lab2P2_LuisMontalvan {
                             + "\n5.Ano de aquisicion"
                                     + "\nElija una opcion: ");
                             resp = pochita.nextInt();
+                            SimpleDateFormat parser = (SimpleDateFormat)new SimpleDateFormat("dd/MM/yyyy");
                             switch (resp) {
                                 case 1:
                                     System.out.print("Ingrese el nombre: ");
+                                    String nom = pochita.nextLine();
+                                    pinturas.get(opc).setNombre(nom);
                                     break;
+                                case 2:
+                                    System.out.print("Ingrese el autor: ");
+                                    String aut = pochita.nextLine();
+                                    pinturas.get(opc).setAutor(aut);
+                                    break;
+                                case 3:
+                                    System.out.print("Esta en exposicion (Si/No): ");
+                                    String exp = pochita.nextLine();
+                                    pinturas.get(opc).setExposicion(exp);
+                                    break;
+                                case 4:
+                                    System.out.print("Ingrese la fecha de adquisicion: ");
+                                    
+                                    Date adq = parser.parse(pochita.nextLine());
+                                    pinturas.get(opc).setAdquisicion(adq);
+                                    break;
+                                case 5:
+                                    System.out.print("Ingrese la fecha de adquisicion: ");
+                                    
+                                    Date exh = parser.parse(pochita.nextLine());
+                                    pinturas.get(opc).setAdquisicion(exh);
+                                    break;
+                                    
                                 default:
                                     throw new AssertionError();
                             }//1
-                    pochita = new Scanner(System.in);
-                    resp = pochita.nextInt();
+                            
                             break;
+                        case 2:
                         default:
                             throw new AssertionError();
                     }//2
@@ -327,7 +361,7 @@ public class Lab2P2_LuisMontalvan {
                             break;
                         case 4:
                             cadena = "";
-                            for (int i = 0; i < pinturas.size(); i++) {
+                            for (int i = 0; i < escritos.size(); i++) {
                                 cadena+= i+".Exhibicion "+(i+1)+"\n";
                             }
                             System.out.print(cadena+"Que exhibicion desea eliminar: ");
