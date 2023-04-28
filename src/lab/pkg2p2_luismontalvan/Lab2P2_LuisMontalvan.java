@@ -4,6 +4,8 @@
  */
 package lab.pkg2p2_luismontalvan;
 
+import java.util.Scanner;
+
 /**
  *
  * @author luism
@@ -14,7 +16,8 @@ public class Lab2P2_LuisMontalvan {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner pochita = new Scanner(System.in);
+        System.out.println("");
     }
     
 }
