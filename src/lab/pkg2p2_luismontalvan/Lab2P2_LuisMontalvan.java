@@ -101,7 +101,33 @@ public class Lab2P2_LuisMontalvan {
             }
             switch (resp) {
                 case 1:
-                    
+                    System.out.print("---Exhibiciones---\n\n---Pinturas---\n");
+                    for (int i = 0; i < pinturas.size(); i++) {
+                        System.out.println(pinturas+"\n\n");
+                    }
+                    System.out.print("---Esculturas---\n");
+                    for (int i = 0; i < esculturas.size(); i++) {
+                        System.out.println(esculturas+"\n\n");
+                    }
+                    System.out.print("---Fotografias---\n");
+                    for (int i = 0; i < fotografias.size(); i++) {
+                        System.out.println(fotografias+"\n\n");
+                    }
+                    System.out.print("---Escritos---\n");
+                    for (int i = 0; i < escritos.size(); i++) {
+                        System.out.println(escritos+"\n\n");
+                    }
+                    break;
+                case 2:
+                    resp=0;
+                    pochita = new Scanner(System.in);
+                    System.out.print("Que tipo de exhibicion desea crear:"
+                            + "\n1.Pintura"
+                            + "\n2.Escultura"
+                            + "\n3.Fotografia"
+                            + "\n4.Escrito"
+                            + "\nElija una opcion: ");
+                    resp = 
                     break;
                 default:
                     throw new AssertionError();
