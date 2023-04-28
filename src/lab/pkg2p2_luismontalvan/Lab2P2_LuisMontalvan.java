@@ -4,7 +4,10 @@
  */
 package lab.pkg2p2_luismontalvan;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -78,7 +81,7 @@ public class Lab2P2_LuisMontalvan {
         }//fin del while
     }//fin del main
 
-    static void menu(Login usuarioA) {
+    static void menu(Login usuarioA) throws ParseException {
         Scanner pochita = new Scanner(System.in);
         ArrayList<Pintura> pinturas = new ArrayList();
         ArrayList<Escultura> esculturas = new ArrayList();
@@ -127,7 +130,39 @@ public class Lab2P2_LuisMontalvan {
                             + "\n3.Fotografia"
                             + "\n4.Escrito"
                             + "\nElija una opcion: ");
-                    resp = 
+                    resp = pochita.nextInt();
+                    switch (resp) {
+                        case 1:
+                            pochita = new Scanner(System.in);
+                            System.out.print("Ingrese el nombre de la obra: ");
+                            String nombre= pochita.nextLine();
+                            System.out.print("Ingrese nombre del autor: ");
+                            String autor = pochita.nextLine();
+                            System.out.print("La obra esta en exposicion"
+                                    + "\n1.Si"
+                                    + "\n2.No"
+                                    + "\nElija una opcion: ");
+                            pochita = new Scanner(System.in);
+                            int sino = pochita.nextInt();
+                            String exposicion = sino==1? "Si":"No";
+                            System.out.print("Ingrese la fecha de presentacion (en formato dd/MM/yyyy): ");
+                            pochita = new Scanner(System.in);
+                            String fecha1 = pochita.nextLine();
+                            SimpleDateFormat parser = (SimpleDateFormat)new SimpleDateFormat("dd/MM/yyyy");
+                            Date presentacion = parser.parse(fecha1);
+                            System.out.print("Ingrese la fecha de aquiscion (en formato dd/MM/yyyy): ");
+                            pochita = new Scanner(System.in);
+                            String fecha2 = pochita.nextLine();
+                            Date adquisicion = parser.parse(fecha1);
+                            pinturas.add(new Pintura(nombre, autor, exposicion, presentacion, adquisicion));
+                            break;
+                        case 2:
+                            pochita = new Scanner(System.in);
+                            
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
                     break;
                 default:
                     throw new AssertionError();
